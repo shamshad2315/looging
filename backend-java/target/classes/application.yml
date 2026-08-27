@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: ulpf-backend
+  main:
+    allow-bean-definition-overriding: true
+  profiles:
+    active: dev
+  data:
+    mongodb:
+      uri: mongodb+srv://shamshadansari43984_db_user:EA2JbHvibwcAaVZa@cluster0.prxavrd.mongodb.net/ulpf_db?retryWrites=true&w=retryReads=true&w=majority
+      auto-index-creation: true
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 50MB
+
+server:
+  port: 8080
+
+ulpf:
+  jwt:
+    secret: 404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970
+    expiration-ms: 86400000
+  python-bridge:
+    enabled: true
+    baseUrl: http://localhost:8000
+    timeout-ms: 3000
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html

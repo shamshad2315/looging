@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <!-- Console Appender -->
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Custom MongoDB Log Appender Plugin -->
+    <appender name="MONGO" class="com.ulpf.plugin.MongoLogAppender">
+        <connectionUri>mongodb+srv://shamshadansari43984_db_user:EA2JbHvibwcAaVZa@cluster0.prxavrd.mongodb.net/ulpf_db?retryWrites=true&amp;w=retryReads=true&amp;w=majority</connectionUri>
+        <databaseName>ulpf_db</databaseName>
+        <collectionName>app_logs</collectionName>
+        <applicationName>ulpf-backend-service</applicationName>
+    </appender>
+
+    <!-- Root Logger -->
+    <root level="INFO">
+        <appender-ref ref="CONSOLE" />
+        <appender-ref ref="MONGO" />
+    </root>
+
+    <!-- ULPF Custom Loggers -->
+    <logger name="com.ulpf" level="DEBUG" />
+
+</configuration>

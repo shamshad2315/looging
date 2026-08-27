@@ -1,0 +1,10 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb+srv://shamshadansari43984_db_user:EA2JbHvibwcAaVZa@cluster0.prxavrd.mongodb.net/ulpf_db?retryWrites=true&w=retryReads=true&w=majority
+
+logging:
+  level:
+    root: INFO
+    com.ulpf: DEBUG
+    org.springframework.data.mongodb: INFO
